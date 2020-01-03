@@ -441,8 +441,9 @@ class WebserviceController extends ApiController
                     'ac_name LIKE' => '%' . $searchString . '%'
                 );
             }
-            dd($contact_type);
+            
             if($contact_type == 'Influencer'){
+                dd($condition);
                 $condition['district'] = $district;
                 $User = TableRegistry::get('tn_disctrictwise_influencers');
             }if($contact_type == 'BLO'){
