@@ -442,8 +442,7 @@ class WebserviceController extends ApiController
                 );
             }
             
-            if($contact_type == 'Influencer'){
-                dd($condition);
+            if($contact_type == 'Influencer'){                
                 $condition['district'] = $district;
                 $User = TableRegistry::get('tn_disctrictwise_influencers');
             }if($contact_type == 'BLO'){
@@ -458,7 +457,7 @@ class WebserviceController extends ApiController
             }
             
             $numUsers = $User->find('all', array('conditions' => $condition))->count();
-            
+            dd($condition);
             $userList = $User->find('all', array('conditions' => $condition, 'order' => ['id' => 'DESC LIMIT ' . $start . ',' . $limit]))->toArray();
             
             if (count($userList)) {
