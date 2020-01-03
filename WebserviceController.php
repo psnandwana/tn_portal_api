@@ -445,7 +445,7 @@ class WebserviceController extends ApiController
             if($contact_type == 'Influencer'){                
                 $condition['district'] = $district;
                 $User = TableRegistry::get('tn_disctrictwise_influencers');
-            }if($contact_type == 'BLO'){
+            }else if($contact_type == 'BLO'){
                 $condition['district'] = $district;
                 $User = TableRegistry::get('tn_disctrictwise_blo');
             }else{
