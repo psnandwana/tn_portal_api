@@ -443,6 +443,7 @@ class WebserviceController extends ApistagingController
                     'ac_name LIKE' => '%' . $searchString . '%'
                 );
             }
+            dd($contact_type);
             if($contact_type == 'Influencer'){
                 $condition['district'] = $district;
                 $User = TableRegistry::get('tn_disctrictwise_influencers');
