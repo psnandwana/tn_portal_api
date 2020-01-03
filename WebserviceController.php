@@ -457,7 +457,7 @@ class WebserviceController extends ApiController
             }
             
             $numUsers = $User->find('all', array('conditions' => $condition))->count();
-            dd($condition);
+           
             $userList = $User->find('all', array('conditions' => $condition, 'order' => ['id' => 'DESC LIMIT ' . $start . ',' . $limit]))->toArray();
             
             if (count($userList)) {
